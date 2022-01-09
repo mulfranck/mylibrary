@@ -7,17 +7,19 @@
 body, html {
     width: 100%;
     height: 100%;
-    background-color: rgb(122, 132, 143);
+    background-color: rgb(238, 233, 233);
 }
 
 .main-head {
     text-align: center;
-    margin: 1rem;
+    margin: 2rem;
+    color: rgb(76, 0, 252);
+    
+
 }
 
 .container {
     width: 50rem;
-    background-color: firebrick;
     margin: auto;
     display: flex;
     align-items: center;
@@ -25,12 +27,13 @@ body, html {
 }
 
 .card {
-    background-color: forestgreen;
+    background-color: rgb(158, 162, 168);
     margin: .5rem;
     flex-shrink: 0;
     border-radius: 16px;
+    box-shadow: 1px 1px 3px 0px rgb(41, 39, 39);
 
-    width: 30rem;
+    width: 25rem;
     padding: .8rem;
     text-align: center;
 }
@@ -38,9 +41,9 @@ body, html {
 .card-head {
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 1.3rem;
-    /* margin-top: 0; */
+    color: rgb(76, 0, 252);
     text-align: center;
-    font-size: 130%;
+    font-size: 140%;
 }
 
 .card-body {
@@ -53,3 +56,6 @@ body, html {
     margin: .5rem;
 }
 
+.hide {
+    display: none;
+}
