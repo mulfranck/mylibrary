@@ -12,11 +12,35 @@
 <body>
     <header class="main-head">
         <h1>My Library, Your Library</h1>
+        <button id="addbookbtn">Add Book</button>
+        <button id="findbookbtn">Find Book</button>
     </header>
 
     <main class="container">
 
     </main>
+
+    <div class="hide">
+        <form action="/" method="post">
+            <div>
+                <label for="title"> Book title </label>
+                <input type="text" name="title" id="title">
+            </div>
+            <div>
+                <label for="author"> Book author </label>
+                <input type="text" name="author" id="author">
+            </div>
+            <div>
+                <label for="pages"> Book pages </label>
+                <input type="text" name="pages" id="pages">
+            </div>
+
+            <div class="status">
+                <label for="haveRead">Read</label>
+                <input type="checkbox" name="haveRead" id="haveRead">
+            </div>
+        </form>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
