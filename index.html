@@ -20,24 +20,30 @@
 
     </main>
 
-    <div class="hide">
+    <div class="hide form-container container">
+        <header class="form-head">
+            <h2>Add Book Details</h2></header>
         <form action="/" method="post">
-            <div>
-                <label for="title"> Book title </label>
+            <div class="input-form">
+                <label for="title"> Book title </label> <br>
                 <input type="text" name="title" id="title">
             </div>
-            <div>
-                <label for="author"> Book author </label>
+            <div class="input-form">
+                <label for="author"> Book author </label> <br>
                 <input type="text" name="author" id="author">
             </div>
-            <div>
-                <label for="pages"> Book pages </label>
+            <div class="input-form">
+                <label for="pages"> Book pages </label> <br>
                 <input type="text" name="pages" id="pages">
             </div>
 
             <div class="status">
                 <label for="haveRead">Read</label>
                 <input type="checkbox" name="haveRead" id="haveRead">
+            </div>
+
+            <div>
+                <button type="submit">Add Book</button>
             </div>
         </form>
     </div>

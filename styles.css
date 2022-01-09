@@ -8,23 +8,30 @@ body, html {
     width: 100%;
     height: 100%;
     background-color: rgb(238, 233, 233);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-.main-head {
-    text-align: center;
-    margin: 2rem;
-    color: rgb(76, 0, 252);
-    
-
-}
-
 .container {
     width: 50rem;
     margin: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
+    transition: all 1s;
 }
+
+button {
+    padding: .3rem .5rem;
+}
+
+
+
+.main-head {
+    text-align: center;
+    margin: 2rem;
+    color: rgb(76, 0, 252);
+    
+}
+
 
 .card {
     background-color: rgb(158, 162, 168);
@@ -36,19 +43,18 @@ body, html {
     width: 25rem;
     padding: .8rem;
     text-align: center;
+    transition: all .7s;
 }
 
 .card-head {
-    font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 1.3rem;
     color: rgb(76, 0, 252);
     text-align: center;
-    font-size: 140%;
+    font-size: 120%;
 }
 
 .card-body {
     font-size: 100%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     margin: 1rem;
 }
@@ -56,6 +62,40 @@ body, html {
     margin: .5rem;
 }
 
+
+.form-container {
+    width: 25rem;
+    background-color: rgb(41, 39, 39);
+    padding: 3rem 0;
+    justify-content: center;
+    color: floralwhite;
+}
+.form-container .form-head {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+.form-container div {
+    margin: 1rem;
+    width: 100%;
+}
+.form-container label {
+    font-size: 120%;
+}
+.form-container .input-form input {
+    margin-top: .3rem;
+    width: 100%;
+    height: 2.3rem;
+    border-radius: 6px;
+    font-size: 100%;
+    padding-left: .5rem;
+    color: rgba(0, 0, 0, 0.826);
+}
+.form-container input:focus {
+    box-shadow: 0px 0px 5px 2px rgb(167, 167, 175);
+    border-style: none;
+}
+
 .hide {
     display: none;
+    transition: all 1s;
 }

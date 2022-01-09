@@ -1,5 +1,8 @@
 
 let $container = document.querySelector('.container');
+let $formContainer = document.querySelector('.form-container')
+
+let $addbtn = document.querySelector('#addbookbtn');
 
 let myLibrary = [
     {
@@ -44,10 +47,12 @@ BookCreator.prototype.readStatusToggler = function() {
 
 
 function addBookToLibrary() {
-    let book = new BookCreator(title, author, pages, read);
-    book.id = Math.ceil(Math.random()*100) + 1;
+    $formContainer.classList.toggle('hide');
+    $container.classList.toggle('hide');
 
-    myLibrary.push(book);
+    // let book = new BookCreator(title, author, pages, read);
+
+    // myLibrary.push(book);
 }
 
 function displayAllBooks() {
@@ -79,9 +84,5 @@ function displayAllBooks() {
 }
 
 displayAllBooks();
-// function toggleRead(index) {
-//     myLibrary[index].toggler();
-    
 
-//     console.log(myLibrary[index].info())
-// }
+$addbtn.addEventListener('click', addBookToLibrary)
