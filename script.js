@@ -1,3 +1,25 @@
+
+
+let $container = document.querySelector('.container');
+
+
+let myLibrary = [
+    {
+        title: 'Deep work',
+        author: 'Cal Newport',
+        pages : 298,
+        haveRead: true,
+        id: '3434',
+    },
+    {
+        title: 'Mindset',
+        author: 'NaN',
+        pages: 359,
+        haveRead: false,
+        id: 7890,
+    }
+];
+
 function BookCreator(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -9,15 +31,7 @@ BookCreator.prototype.info = function() {
     return (` The ${this.title} by ${this.author}, ${this.pages} pages, ${this.haveRead}.`);
 }
 
-let myLibrary = [
-    {
-        title = 'Deep work',
-        author = 'Cal Newport',
-        pages = 298,
-        haveRead = true,
-        id = '3434'
-    }
-];
+
 
 function addBookToLibrary() {
     let book = new BookCreator(title, author, pages, read);
@@ -28,9 +42,9 @@ function addBookToLibrary() {
 
 function displayAllBooks() {
     for (books of myLibrary) {
-        let status = books.haveRead ? 'Have not read' : 'Have read';
+        let status = books.haveRead ? 'Have read' : 'Have not read';
 
-        $container.innerHTML = 
+        $container.innerHTML += 
         `
         <article class='card'>
             <header class='card-head'>
@@ -47,3 +61,5 @@ function displayAllBooks() {
 
     }
 }
+
+displayAllBooks();
