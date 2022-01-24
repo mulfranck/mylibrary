@@ -23,23 +23,23 @@
     <div class="hide form-container container">
         <header class="form-head">
             <h2>Add Book Details</h2></header>
-        <form action="/" method="post">
+        <form action="/" method="post" id="addBookForm">
             <div class="input-form">
                 <label for="title"> Book title </label> <br>
-                <input type="text" name="title" id="title">
+                <input type="text" name="title" id="title" value="">
             </div>
             <div class="input-form">
                 <label for="author"> Book author </label> <br>
-                <input type="text" name="author" id="author">
+                <input type="text" name="author" id="author" value="">
             </div>
             <div class="input-form">
                 <label for="pages"> Book pages </label> <br>
-                <input type="text" name="pages" id="pages">
+                <input type="text" name="pages" id="pages" value="">
             </div>
 
             <div class="status">
-                <label for="haveRead">Read</label>
                 <input type="checkbox" name="haveRead" id="haveRead">
+                <label for="haveRead">Read</label>
             </div>
 
             <div>
