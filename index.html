@@ -11,9 +11,19 @@
 </head>
 <body>
     <header class="main-head">
-        <h1>My Library, Your Library</h1>
-        <button id="addbookbtn">Add Book</button>
-        <button id="findbookbtn">Find Book</button>
+        <nav class="navbar">
+            <h1 class="brand">My Library</h1>
+
+            <ul class="navlist">
+                <li class="items">
+                    <button id="addbookbtn">Add Book</button>
+                </li>
+                <li>
+                    <button id="findbookbtn">Find Book</button>
+                </li>
+            </ul>
+        </nav>
+        <h1 style="margin-top: 5rem;">My Library, Your Library</h1>
     </header>
 
     <main class="container">
@@ -44,9 +54,13 @@
 
             <div>
                 <button type="submit">Add Book</button>
+                <button type="button" id="cancel">Cancel</button>
             </div>
         </form>
     </div>
+    <footer class="main-footer">
+        <h3>Mul franck</h3>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
