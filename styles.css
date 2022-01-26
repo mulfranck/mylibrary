@@ -47,11 +47,10 @@ button {
 }
 
 /* ** card ** */
-.img-holder {
+.card-img {
     max-width: 13rem;
     height: 15rem;
     margin: .90rem auto;
-    background-color: aqua;
 }
 .card {
     text-align: center;

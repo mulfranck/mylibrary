@@ -9,27 +9,31 @@ let myLibrary = [
     {
         title: 'Deep work',
         author: 'Cal Newport',
+        image : 'https://www.calnewport.com/wp-content/uploads/2015/11/deep-work-cal-newport.jpg',
         pages : 298,
         haveRead: true,
     },
     {
         title: 'Mindset',
-        author: 'NaN',
+        author: 'Dr. Carol Dweck',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW78KS1sSlwnpWwzm_PX3bNw81rBOCNQ22RJQ2OGE81YW6EFuK',
         pages: 359,
         haveRead: false,
     },
     {
-        title: 'How to talk out loud',
-        author: 'Franck Cutter',
-        pages: 359,
-        haveRead: true,
+        title: 'Atomic habits',
+        author: 'James Clear',
+        image: 'https://jamesclear.com/wp-content/uploads/2021/08/atomic-habits-dots-1.png',
+        pages: 229,
+        haveRead: false,
     }
 ];
 let bookIndex = myLibrary.length-1;
 
-function BookCreator(title, author, pages, haveRead) {
+function BookCreator(title, author, image, pages, haveRead) {
     this.title = title;
     this.author = author;
+    this.image = image
     this.pages = pages;
     this.haveRead = haveRead;
 }
@@ -47,8 +51,8 @@ const toggleForm = () => {
     $addbtn.disabled = true;
 }
 
-function addBookToLibrary(title, author, pages, read) {
-    myLibrary.push(new BookCreator(title, author, pages, read));
+function addBookToLibrary(title, author, image, pages, read) {
+    myLibrary.push(new BookCreator(title, author, image, pages, read));
 }
 
 
@@ -56,8 +60,8 @@ function addBookToLibrary(title, author, pages, read) {
 const display_a_book = index => {
     let status = myLibrary[index].haveRead ? 'Read': 'Not Read';
     let j$card = document.createElement('article');
-    let j$cardheader = document.createElement('header');
-    let j$cardimg_holder = document.createElement('div');
+    let j$cardHeader = document.createElement('header');
+    let j$cardImg = document.createElement('img');
     let j$cardTitle = document.createElement('h3');
     let j$cardBody = document.createElement('section');
     let j$cardFooter = document.createElement('footer');
@@ -68,12 +72,13 @@ const display_a_book = index => {
     j$cardAuthor = document.createElement('p');
 
     j$card.classList.add('card');
-        j$cardheader.classList.add('card-header');
+        j$cardHeader.classList.add('card-header');
             j$cardTitle.classList.add('title');
-            j$cardimg_holder.classList.add('img-holder');
-            j$cardheader.appendChild(j$cardimg_holder);
+            j$cardImg.classList.add('card-img');
+            j$cardImg.src = `${myLibrary[index].image}`;
+            j$cardHeader.appendChild(j$cardImg);
             j$cardTitle.textContent = `${myLibrary[index].title}`;
-            j$cardheader.appendChild(j$cardTitle);
+            j$cardHeader.appendChild(j$cardTitle);
 
         j$cardBody.classList.add('card-body');
             j$cardAuthor.classList.add('author');
@@ -91,7 +96,7 @@ const display_a_book = index => {
             j$cardFooter.append(j$readBtn);
             j$cardFooter.appendChild(j$deleteBtn);
             
-    j$card.appendChild(j$cardheader);
+    j$card.appendChild(j$cardHeader);
     j$card.appendChild(j$cardBody);
     j$card.appendChild(j$cardFooter);
     $container.appendChild(j$card);
