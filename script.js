@@ -42,8 +42,17 @@ function delete_a_book(e) {
     (e.target.parentNode.parentNode.remove());
     bookIndex--;
 }
-const toggleReadStatus = () => {
-
+const toggleReadStatus = (e) => {
+    let status = (e.target.attributes['data-status'].value);
+    if (status == "true") {
+        e.target.textContent = 'Not Read';
+        e.target.attributes['data-status'].value = "false";
+    } else {
+        e.target.textContent = 'Read';
+        e.target.attributes['data-status'].value = "true";
+    }
+    
+    
 }
 const toggleForm = () => {
     $formContainer.classList.toggle('hide');
@@ -89,6 +98,7 @@ const display_a_book = index => {
 
         j$cardFooter.classList.add('card-footer');
             j$deleteBtn.setAttribute('data-id', `${bookIndex}`);
+            j$readBtn.setAttribute('data-status', `${myLibrary[index].haveRead}`);
             j$deleteBtn.textContent = 'Delete';
             j$readBtn.textContent = `${status}`;
             j$readBtn.addEventListener('click', toggleReadStatus);
