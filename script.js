@@ -37,9 +37,18 @@ function BookCreator(title, author, image, pages, haveRead) {
     this.pages = pages;
     this.haveRead = haveRead;
 }
+
+function find_book(title){
+    for (let book = 0; book< myLibrary.length; book++){
+        if (myLibrary[book]['title'] == title){
+            return book;
+        }
+    }
+}
 function delete_a_book(e) {
-    myLibrary.splice(bookIndex, 1);
-    (e.target.parentNode.parentNode.remove());
+    let book = e.target.parentNode.parentNode;
+    myLibrary.splice(find_book(book.childNodes[0].innerText), 1);
+    book.remove();
     bookIndex--;
 }
 const toggleReadStatus = (e) => {
@@ -97,7 +106,7 @@ const display_a_book = index => {
             j$cardBody.appendChild(j$cardPages);
 
         j$cardFooter.classList.add('card-footer');
-            j$deleteBtn.setAttribute('data-id', `${bookIndex}`);
+            j$deleteBtn.setAttribute('data-id', `${index}`);
             j$readBtn.setAttribute('data-status', `${myLibrary[index].haveRead}`);
             j$deleteBtn.textContent = 'Delete';
             j$readBtn.textContent = `${status}`;
